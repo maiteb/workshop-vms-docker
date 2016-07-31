@@ -30,9 +30,21 @@ como se comunicacam deve ser transparente ao usuário.
 
 ## Cluster de computadores
 
->  Uma série de computadores de configurações "mais simples" conectados por uma rede mais rápida e próxima do que uma rede local, com baixa latência, trabalhando em conjunto como um único e integrado recurso computacional.
+>  Uma série de computadores de configurações "mais simples", porém tecnologicamente homogêneos, conectados por uma rede mais rápida e próxima do que uma rede local, com baixa latência, trabalhando em conjunto como um único e integrado recurso computacional.
 
 Note: Mais simples => Mais barato $
+
+---
+
+## Computação em grade
+
+> Não existe nenhuma premissa tecnológica entre os nós integrantes do
+> sistema. Interessante saber que recursos de diferentes organizações
+> são reunidos para permitir a colaboração de um grupo de usuários,
+> formando uma *organização virtual*.
+
+Note: Pessoas pertencentes à mesma organização virtual tem direitos de
+acesso aos recursos fornecidos por ela. 
 
 ---
 
@@ -84,4 +96,45 @@ recurso.
 ![Cliente-Servidor](https://cdn.tutsplus.com/gamedev/uploads/2013/08/img1_server_client.png)
 
 _Fonte: [Envatotuts](http://gamedevelopment.tutsplus.com/)_
+
+---
+
+## Cloud computing
+
+Pela [AWS](https://aws.amazon.com/pt/what-is-cloud-computing/)
+> Usando o princípio de computação em grade, se refere a entrega de
+> recursos computacionais (por exemplo: memória, processamento, armazenamento),
+e aplicativos pela internet sob demanda.
+
+---
+
+## Tipos de cloud computing
+
+* Infraestrutura como Serviço (IaaS)
+* Plataforma como Serviço (PaaS)
+* Software como Serviço (SaaS)
+
+Note: 1. Amazon EC2, 2. AWS Elastic Beanstalk, Heroku, 3. Google Drive
+
+---
+
+## Provedores de nuvens públicas
+
+* Amazon Web Services;
+* DigitalOcean;
+* Rackspace;
+---
+
+## Nuvens privadas
+
+* Openstack
+  * HP Helion
+  * RedHat Openstack
+  * Ubuntu Cloud
+  * Rackspace;
+
+---
+
+## Virtualização
+
 
