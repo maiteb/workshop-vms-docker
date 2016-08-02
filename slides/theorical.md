@@ -123,6 +123,7 @@ Note: 1. Amazon EC2, 2. AWS Elastic Beanstalk, Heroku, 3. Google Drive
 * Amazon Web Services;
 * DigitalOcean;
 * Rackspace;
+
 ---
 
 ## Nuvens privadas
@@ -137,4 +138,73 @@ Note: 1. Amazon EC2, 2. AWS Elastic Beanstalk, Heroku, 3. Google Drive
 
 ## Virtualização
 
+Pela
+[RedHat](http://www.redhat.com/f/pdf/virtualization/gunner_virtual_paper2.pdf):
 
+> Permitir rodar múltiplas instâncias de sistemas
+> operacionais concorrentemente em um único computador, separando
+> hardware a partir de um único sistema operacional.
+
+---
+
+## Virtualização
+
+
+Pela
+[RedHat](http://www.redhat.com/f/pdf/virtualization/gunner_virtual_paper2.pdf):
+
+> Cada SO convidado é gerenciado pelo hypervisor, que controla o uso de
+> CPU, memória e armazenamento de cada uma das máquinas virtuais
+
+---
+
+## Virtualização
+
+![Virtualização](http://www.vcritical.com/wp-content/uploads/2009/04/hw_vmw_os_app.png)
+
+_Fonte: [VCritical](http://www.vcritical.com/)_
+
+---
+
+# Hypervisor
+
+Por
+[UFRJ](http://www.gta.ufrj.br/grad/08_1/virtual/OqueohypervisorouVMM(VirtualMachineMonit.html)
+
+> Camada de software entre o hardware e o SO, responsável por abstrair a
+> máquina virtual para o SO convidado, ou seja, ele é quem executa ou
+> simula executar instruções (privilegiadas ou não) requisitadas pelo SO
+> visitante.
+
+---
+
+## Tipos de hypervisor
+
+* Nativo;
+* Hosted.
+
+Note: 1. Roda direto sobre o hardware, exemplo Xen, VMware ESX; 2.
+Executa sobre um SO para oferecer a funcionalidade descrita: VirtualBox,
+QEMU, VMware.
+
+---
+
+## VM como código
+
+[Vagrant](https://www.vagrantup.com/docs/getting-started/project_setup.html)
+
+(Agora vamos brincar um pouco)
+
+---
+
+## Vagrant
+
+Comandos úteis
+
+```sh
+$ vagrant init hashicorp/trusty64
+$ vagrant up
+$ vagrant provision
+$ vagrant halt
+$ vagrant destroy
+```
