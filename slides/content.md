@@ -199,10 +199,80 @@ QEMU, VMware.
 
 ## Vagrant
 
+Configuração de imagem inicial
+
+
+```ruby
+Vagrant.configure("2") do
+  config.box = "ubuntu/trusty64"
+end
+```
+
+---
+
+## Vagrant
+
+Configurações de rede
+
+```ruby
+Vagrant.configure("2") do |config|
+  config.vm.network :forwarded_port, guest: 80, host: 9090
+end
+```
+_A porta 80 do SO convidado é encaminhada para a porta 9090 do host_
+
+---
+
+## Vagrant
+
+Configurações de rede
+
+```ruby
+Vagrant.configure("2") do |config|
+  config.vm.network "private_network", ip: "192.168.50.4"
+end
+```
+
+_A VM está acessível em uma rede privada com IP 192.168.50.4_
+
+---
+
+## Vagrant
+
+Provisionamento
+
+
+```ruby
+Vagrant.configure("2") do |config|
+ config.vm.provision "shell", inline: <<-SHELL
+   sudo apt-get update
+   sudo apt-get install -y apache2
+ SHELL
+end
+```
+
+_Após a criação da máquina, irá executar os comandos especificados_
+
+---
+
+## Vagrant
+
+```ruby
+Vagrant.configure("2") do |config|
+  config.vm.provision "shell", path: "script.sh"
+end
+```
+
+_Após a criação da máquina, irá executar ```script.sh```_
+
+---
+
+## Vagrant
+
 Comandos úteis
 
 ```sh
-$ vagrant init hashicorp/trusty64
+$ vagrant init ubuntu/trusty64
 $ vagrant up
 $ vagrant provision
 $ vagrant halt
