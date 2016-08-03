@@ -336,7 +336,7 @@ Status: Downloaded newer image for docker/whalesay:latest
 Executar interativamente
 
 ```sh
-$ docker run -it ubuntu
+$ docker run -it ubuntu bash
 ```
 
 ---
