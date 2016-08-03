@@ -274,6 +274,7 @@ Comandos úteis
 ```sh
 $ vagrant init ubuntu/trusty64
 $ vagrant up
+$ vagrant ssh
 $ vagrant provision
 $ vagrant halt
 $ vagrant destroy
@@ -335,15 +336,7 @@ Status: Downloaded newer image for docker/whalesay:latest
 Executar interativamente
 
 ```sh
-$ docker exec -it ubuntu bash
-```
-
----
-
-## Docker
-
-```sh
-
+$ docker run -it ubuntu
 ```
 
 ---
@@ -353,6 +346,7 @@ $ docker exec -it ubuntu bash
 Criando sua própria imagem
 
 ```sh
+# Dockerfile
 FROM ubuntu:14.04
 
 RUN apt-get update
@@ -383,7 +377,12 @@ $ docker build . --tag nome_da_imagem
 Para executá-la:
 
 ```sh
-$ docker run -it nome_da_image
+$ docker run -it nome_da_imagem
+```
+
+É possível mapear portas do container para o host:
+```sh
+$ docker run -p 80:8080 -it nome_da_image
 ```
 
 ---
@@ -419,4 +418,40 @@ $ docker exec -it id_do_container comando
 Exemplo de uso:
 ```sh
 $ docker exec -it id_do_container bash
+```
+
+---
+
+## Docker
+
+Acessar logs do container:
+
+```sh
+$ docker logs id_do_container
+```
+
+---
+
+## Docker
+
+Atualizar um container e criar uma nova imagem:
+
+```sh
+$ docker commit id_do_container [--tag nome_da_imagem]
+```
+
+---
+
+## Docker
+
+Parar um container em execução:
+
+```sh
+$ docker stop id_do_container
+```
+
+Para matá-lo:
+
+```sh
+$ docker kill id_do_container
 ```
