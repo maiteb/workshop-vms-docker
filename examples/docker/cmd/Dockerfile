@@ -1,3 +1,5 @@
 FROM ubuntu
 
-CMD ["echo", "Container continua executando"]
+RUN apt-get update
+
+CMD ["bash"]
