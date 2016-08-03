@@ -278,3 +278,145 @@ $ vagrant provision
 $ vagrant halt
 $ vagrant destroy
 ```
+
+---
+
+## Contâineres
+
+Por [Docker](https://www.docker.com/what-docker#/VM):
+
+> Um contâiner contém a aplicação e suas dependências, mas compartilhar
+> o kernel com outros contâineres, sendo um processo isolado em  _user space_ do sistema operacional host.
+
+---
+
+## Contâineres
+
+![Contâineres](https://www.docker.com/sites/default/files/WhatIsDocker_3_Containers_1.png)
+
+_Fonte: [Docker](http://www.docker.com/)_
+
+---
+
+## Docker
+
+```sh
+$ docker run hello-world
+$ docker ps -a
+```
+
+---
+
+## Docker
+
+```sh
+$ docker run docker/whalesay cowsay boo
+Unable to find image 'docker/whalesay:latest' locally
+latest: Pulling from docker/whalesay
+e9e06b06e14c: Pull complete
+a82efea989f9: Pull complete
+37bea4ee0c81: Pull complete
+07f8e8c5e660: Pull complete
+676c4a1897e6: Pull complete
+5b74edbcaa5b: Pull complete
+1722f41ddcb5: Pull complete
+99da72cfe067: Pull complete
+5d5bd9951e26: Pull complete
+fb434121fc77: Already exists
+Digest:
+sha256:d6ee73f978a366cf97974115abe9c4099ed59c6f75c23d03c64446bb9cd49163
+Status: Downloaded newer image for docker/whalesay:latest
+```
+
+---
+
+## Docker
+
+Executar interativamente
+
+```sh
+$ docker exec -it ubuntu bash
+```
+
+---
+
+## Docker
+
+```sh
+
+```
+
+---
+
+## Docker
+
+Criando sua própria imagem
+
+```sh
+FROM ubuntu:14.04
+
+RUN apt-get update
+RUN apt-get install -y nginx
+RUN echo 'Container criado no workshop da SECOMP' \
+    >/usr/share/nginx/html/index.html
+
+CMD [ "nginx", "-g", "daemon off;" ]
+
+EXPOSE 80
+
+```
+
+---
+
+## Docker
+
+Para construí-la:
+
+```sh
+$ docker build . --tag nome_da_imagem
+```
+
+---
+
+## Docker
+
+Para executá-la:
+
+```sh
+$ docker run -it nome_da_image
+```
+
+---
+
+## Docker
+
+Para listar todas as imagens locais:
+
+```sh
+$ docker images
+```
+
+---
+
+## Docker
+
+Para se conectar à um container em execução:
+
+```sh
+$ docker attach id_do_container
+```
+
+---
+
+## Docker
+
+Para executar um comando em um container em execução:
+
+```sh
+$ docker exec -it id_do_container comando
+```
+
+Exemplo de uso:
+```sh
+$ docker exec -it id_do_container bash
+```
